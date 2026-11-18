@@ -59,6 +59,7 @@ a:focus-visible, .play:focus-visible { outline: 3px solid var(--signal); outline
   font-size: clamp(3rem, 21cqi, 11.5rem); line-height: 0.86; letter-spacing: -0.015em; margin: 0 0 2.2rem;
 }
 .opening .lead { font-size: 1.5rem; line-height: 1.4; max-width: 30ch; margin: 0; }
+.opening .also { font-size: 1.0625rem; line-height: 1.5; max-width: 40ch; margin: 1.1rem 0 0; color: var(--soft); }
 
 /* His picture, with the sash of a racing silk across the corner. */
 .portrait { position: relative; margin: 0; }
