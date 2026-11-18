@@ -127,8 +127,8 @@
         <p>What impressed me most was the checking. It had asked a second AI, one that had not seen any of the work, to review everything. That reviewer found real mistakes. My favourite: you got points when the police ran over a pedestrian while chasing you. You could stand still, let the police cause the accidents, and watch your score go up. That got fixed before I ever saw it.</p>
 
         <figure>
-          <img src="../../assets/shots/alert5.jpg" alt="The game at the highest alert level. A message across the screen reads: Alert 5, a tank and a helicopter, for you." width="960" height="540">
-          <figcaption>The police have five alert levels. The messages get less polite as you go up.</figcaption>
+          <img src="../../assets/shots/alert5.jpg" alt="The game at the highest alert level. A message across the screen reads: Alert 5, tank and chopper inbound." width="960" height="540">
+          <figcaption>The police have five alert levels. At the fifth they stop sending cars.</figcaption>
         </figure>
 
         <div class="callout">
@@ -157,7 +157,7 @@
         </figure>
 
         <figure>
-          <img src="../../assets/shots/map.jpg" alt="The pause screen of the game: a map of the whole city with the districts Santpoort-Noord, Downtown and Harbour." width="960" height="540">
+          <img src="../../assets/shots/map.jpg" alt="The pause screen of the game: a map of the whole city with the districts Santpoort-Noord, Downtown and Harbor." width="960" height="540">
           <figcaption>Press P and you get the whole city. Santpoort-Noord on the left, obviously.</figcaption>
         </figure>
 
@@ -180,7 +180,11 @@
           <figcaption>The cast of Ramon's Rampage.</figcaption>
         </figure>
 
-        <h2 data-step="11">In the evening the list grew again</h2>
+        <h2 data-step="11">The website came along</h2>
+        <p>A game needs somewhere to live, so I asked for a website as well: an about page, this post and the game. I had registered the domain myself. The rest I described the way I described the game, and I gave it my LinkedIn profile to work from. Most of the words about me are my own. None of the HTML is.</p>
+        <p>The only part that took real time was the address. The domain turned out to point somewhere else already, and after that was put right my own internet provider went on sending me to the old place for a while.</p>
+
+        <h2 data-step="12">In the evening the list grew again</h2>
         <p>By the evening the game was on this website, and I was playing it instead of doing anything useful. So the list grew again.</p>
         <ul>
           <li>People should get out when I take their car. The angry ones should come after me.</li>
@@ -190,20 +194,20 @@
         <p>The first one is my favourite. Take a car and the driver steps out beside the door. Half of them run. The other half walk round the car and start hitting you, or kick the car while you sit in it.</p>
 
         <figure>
-          <img src="../../assets/shots/angry.jpg" alt="A car stopped at a crossing in the pixel city. A message across the screen reads: Excuse me. That is my car." width="960" height="540">
+          <img src="../../assets/shots/angry.jpg" alt="A car stopped at a crossing in the pixel city. A message across the screen reads: Hey! That's my car!" width="960" height="540">
           <figcaption>He has a point.</figcaption>
         </figure>
 
         <p>The scores of everyone needed something a web page cannot do by itself, which is remember things. So there is now a small server with a database behind the game, and one list for everybody.</p>
 
         <figure>
-          <img src="../../assets/shots/name.jpg" alt="The end of a round. The screen reads: Parked at sea. Your name, for the record. The name Ramon is being typed." width="960" height="540">
-          <figcaption>I drove into the sea to take this picture.</figcaption>
+          <img src="../../assets/shots/name.jpg" alt="The end of a round. The screen reads: Busted. Enter your name. The name Ramon is being typed." width="960" height="540">
+          <figcaption>The end of a round. First your name.</figcaption>
         </figure>
 
         <figure>
-          <img src="../../assets/shots/everyone.jpg" alt="The end of a round with a list headed: everyone who played. Six placeholder entries and, in seventh place with an arrow, Ramon." width="960" height="540">
-          <figcaption>The list everyone shares. This is the practice list, so the six cars above me are not people.</figcaption>
+          <img src="../../assets/shots/everyone.jpg" alt="The end of a round with a list headed: world high scores. Eight entries, most of them called Car, and below them the line: your rank, 11." width="960" height="540">
+          <figcaption>The list everyone shares. This one is the practice list, which is why it is full of cars.</figcaption>
         </figure>
 
         <p>The engines I sent back twice. First every vehicle shared one hum. Then each got a voice made out of numbers, which I still did not like. The third time I asked for real ones, so the game now plays recordings of a Mini, a Ford Escort, a Porsche, a diesel lorry and a T-26 tank, among others, all given away by the people who recorded them.</p>
@@ -213,7 +217,7 @@
           <p>Arrows or WASD to drive and walk, <kbd>E</kbd> to get in and out of a car, <kbd>Space</kbd> for the handbrake, <kbd>P</kbd> for the map.</p>
         </div>
 
-        <h2 data-step="12">I asked for a test, and it failed one</h2>
+        <h2 data-step="13">I asked for a test, and it failed one</h2>
         <p>My last request of the day was to test the code on security and on the ordinary rules of software development. It handed everything to a second AI that had built none of it.</p>
         <p>That one found that the list of scores, finished an hour earlier, lost scores when players finished at the same moment. Of eight sent at once, seven vanished. The limit of six scores a minute per player let fifteen through. It also found a way the build could overwrite my own title picture.</p>
         <p>None of the tests had caught any of it, because they ran against a stand-in that behaved better than the real thing. It was all fixed the same evening, and the scoreboard was rebuilt on a proper database.</p>
