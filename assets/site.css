@@ -1,0 +1,139 @@
+/* ramonwieleman.nl
+   Fog, ink and the colours of racing silks. A wide rail on the left names
+   each part; the words sit beside it. One loud thing per page: the name. */
+
+:root {
+  --fog: #eef1ec;
+  --paper: #f8faf6;
+  --ink: #16261f;
+  --moss: #2f5a3c;
+  --silk: #f1d44a;
+  --signal: #c8362b;
+  --line: #c5cec2;
+  --soft: #55665c;
+
+  --display: "Avenir Next Condensed", "Barlow Condensed", "Roboto Condensed", "Arial Narrow", "Helvetica Neue", Arial, sans-serif;
+  --text: Charter, "Bitstream Charter", "Sitka Text", Cambria, Georgia, serif;
+
+  --rail: 11rem;
+  --measure: 62ch;
+}
+
+* { box-sizing: border-box; }
+
+html { background: var(--fog); color: var(--ink); -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  font-family: var(--text);
+  font-size: 1.1875rem;
+  line-height: 1.62;
+}
+
+a { color: var(--moss); text-decoration-thickness: 0.08em; text-underline-offset: 0.18em; }
+a:hover { color: var(--ink); }
+a:focus-visible, .play:focus-visible { outline: 3px solid var(--signal); outline-offset: 3px; }
+
+.wrap { max-width: 74rem; margin: 0 auto; padding: 0 1.5rem; }
+
+/* ---- the top of every page ---- */
+.top { display: flex; align-items: baseline; justify-content: space-between; gap: 1.5rem; padding: 1.4rem 0 1.2rem; border-bottom: 2px solid var(--ink); }
+.top .home { font-family: var(--display); font-weight: 700; font-size: 1.35rem; letter-spacing: 0.01em; color: var(--ink); text-decoration: none; }
+.top nav { display: flex; align-items: baseline; gap: 1.6rem; font-family: var(--display); font-weight: 600; font-size: 1.15rem; }
+.top nav a { color: var(--ink); text-decoration: none; }
+.top nav a:hover, .top nav a[aria-current] { text-decoration: underline; text-decoration-thickness: 0.14em; text-underline-offset: 0.3em; }
+
+.play {
+  display: inline-block; font-family: var(--display); font-weight: 700; letter-spacing: 0.01em;
+  background: var(--signal); color: #fff !important; text-decoration: none !important;
+  padding: 0.38em 0.95em 0.42em; border-radius: 2px;
+}
+.play:hover { background: var(--ink); }
+
+/* ---- the opening of the front page ---- */
+.opening { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 4fr); gap: 3rem; align-items: end; padding: 4.5rem 0 4rem; }
+.opening h1 {
+  font-family: var(--display); font-weight: 800; font-stretch: condensed;
+  font-size: clamp(4.2rem, 13.5vw, 11.5rem); line-height: 0.86; letter-spacing: -0.015em; margin: 0 0 2.2rem;
+}
+.opening .lead { font-size: 1.5rem; line-height: 1.4; max-width: 30ch; margin: 0; }
+
+/* His picture, with the sash of a racing silk across the corner. */
+.portrait { position: relative; margin: 0; }
+.portrait::before { content: ""; position: absolute; inset: 1.4rem -1.4rem -1.4rem 1.4rem; background: var(--silk); }
+.portrait img { position: relative; display: block; width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 12%; }
+.portrait::after {
+  content: ""; position: absolute; left: -0.6rem; bottom: -0.6rem; width: 44%; aspect-ratio: 1;
+  background: linear-gradient(135deg, transparent 0 46%, var(--signal) 46% 62%, transparent 62%);
+  pointer-events: none;
+}
+
+/* ---- a part of a page: its name in the rail, its words beside it ---- */
+.part { display: grid; grid-template-columns: var(--rail) minmax(0, 1fr); gap: 2.5rem; padding: 2.6rem 0; border-top: 1px solid var(--line); }
+.part > h2 { font-family: var(--display); font-weight: 700; font-size: 1.7rem; line-height: 1.1; margin: 0.1rem 0 0; }
+.part .words { max-width: var(--measure); }
+.part .words > :first-child { margin-top: 0; }
+.part .words > :last-child { margin-bottom: 0; }
+
+/* Things made: when, what, and a line about it. */
+.made { list-style: none; margin: 0; padding: 0; max-width: 52rem; }
+.made li { display: grid; grid-template-columns: 5.5rem minmax(0, 1fr); gap: 1.5rem; padding: 1.1rem 0; border-top: 1px solid var(--line); }
+.made li:first-child { border-top: 0; padding-top: 0; }
+.made .when { font-style: italic; color: var(--soft); }
+.made h3 { font-family: var(--display); font-weight: 700; font-size: 1.45rem; line-height: 1.15; margin: 0 0 0.25rem; }
+.made p { margin: 0; }
+.made .links { margin-top: 0.7rem; display: flex; flex-wrap: wrap; gap: 1.2rem; align-items: baseline; }
+
+.foot { border-top: 2px solid var(--ink); margin-top: 3rem; padding: 1.4rem 0 3rem; color: var(--soft); font-size: 1rem; }
+
+/* ---- a piece of writing ---- */
+.piece { padding: 3.5rem 0 1rem; }
+.piece header { max-width: 58rem; }
+.piece h1 { font-family: var(--display); font-weight: 800; font-size: clamp(2.8rem, 7.4vw, 5.6rem); line-height: 0.95; letter-spacing: -0.01em; margin: 0 0 1.4rem; }
+.piece .standfirst { font-size: 1.5rem; line-height: 1.4; max-width: 38ch; margin: 0 0 1.2rem; }
+.piece .when { font-style: italic; color: var(--soft); margin: 0 0 2.4rem; }
+
+.piece .body { display: grid; grid-template-columns: var(--rail) minmax(0, var(--measure)); column-gap: 2.5rem; }
+.piece .body > * { grid-column: 2; }
+.piece .body > h2 { font-family: var(--display); font-weight: 700; font-size: 2rem; line-height: 1.1; margin: 2.6rem 0 0.4rem; }
+/* The steps are a sequence: each carries its number in the rail. */
+.piece .body > h2[data-step]::before {
+  content: attr(data-step); float: left; margin-left: calc(-1 * (var(--rail) + 2.5rem)); width: var(--rail);
+  font-size: 3.2rem; line-height: 0.8; font-weight: 800; color: var(--moss); text-align: right;
+}
+.piece .body p { margin: 0 0 1.1rem; }
+.piece .body blockquote { margin: 0 0 1.2rem; padding: 0.1rem 0 0.1rem 1.2rem; border-left: 4px solid var(--silk); font-style: italic; }
+.piece .body blockquote p { margin: 0; }
+.piece .body ul { margin: 0 0 1.2rem; padding-left: 1.2rem; }
+.piece .body li { margin-bottom: 0.35rem; }
+.piece .body figure { grid-column: 1 / -1; margin: 1.6rem 0 2rem; max-width: 60rem; }
+.piece .body figure img { display: block; width: 100%; height: auto; background: var(--ink); image-rendering: auto; }
+.piece .body figcaption { font-size: 1rem; font-style: italic; color: var(--soft); margin-top: 0.5rem; max-width: var(--measure); }
+.piece .body .callout { background: var(--paper); border: 1px solid var(--line); border-left: 6px solid var(--silk); padding: 1.1rem 1.3rem; margin: 0.4rem 0 1.6rem; }
+.piece .body .callout p:last-child { margin-bottom: 0; }
+.piece .body table { border-collapse: collapse; margin: 0 0 1.4rem; font-size: 1.05rem; }
+.piece .body th, .piece .body td { text-align: left; padding: 0.35rem 1.4rem 0.35rem 0; border-bottom: 1px solid var(--line); vertical-align: top; }
+.piece .body th { font-family: var(--display); font-weight: 700; font-size: 1.15rem; }
+kbd { font-family: var(--display); font-weight: 700; font-size: 0.95em; background: var(--ink); color: var(--fog); padding: 0.05em 0.45em 0.1em; border-radius: 2px; white-space: nowrap; }
+
+/* ---- the list of writing ---- */
+.posts { list-style: none; margin: 0; padding: 0; }
+.posts li { padding: 0 0 1.4rem; }
+.posts a { font-family: var(--display); font-weight: 700; font-size: 1.9rem; line-height: 1.1; color: var(--ink); text-decoration-thickness: 0.08em; }
+.posts p { margin: 0.3rem 0 0; }
+.posts .when { font-style: italic; color: var(--soft); }
+
+/* ---- small screens: the rail goes above the words ---- */
+@media (max-width: 52rem) {
+  body { font-size: 1.125rem; }
+  .opening { grid-template-columns: 1fr; gap: 2.5rem; padding: 2.8rem 0 3rem; }
+  .portrait { max-width: 20rem; margin-right: 1.4rem; }
+  .part { grid-template-columns: 1fr; gap: 0.8rem; padding: 2rem 0; }
+  .piece .body { display: block; }
+  .piece .body > h2[data-step]::before { float: none; display: block; margin: 0 0 0.3rem; width: auto; text-align: left; font-size: 2.4rem; }
+  .top { flex-wrap: wrap; row-gap: 0.6rem; }
+  .top nav { gap: 1.1rem; font-size: 1.05rem; }
+  .made li { grid-template-columns: 1fr; gap: 0.2rem; }
+}
+
+@media print { .top nav, .play { display: none; } }

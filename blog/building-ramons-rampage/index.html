@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GTA 6 comes out tomorrow. I spent today building my own GTA 1. | Ramon Wieleman</title>
+  <meta name="description" content="I am not a developer. In one day, with Claude, I built a top-down city game in the spirit of the first GTA. This is how it went, step by step.">
+  <meta property="og:title" content="GTA 6 comes out tomorrow. I spent today building my own GTA 1.">
+  <meta property="og:description" content="I am not a developer. This is how I built a game in a day, step by step.">
+  <meta property="og:image" content="https://ramonwieleman.nl/assets/shots/chase.jpg">
+  <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <a class="home" href="../../">Ramon Wieleman</a>
+    <nav aria-label="Main">
+      <a href="../../">About</a>
+      <a href="../" aria-current="page">Writing</a>
+      <a class="play" href="../../game/">Play the game</a>
+    </nav>
+  </header>
+
+  <main>
+    <article class="piece">
+      <header>
+        <h1>GTA 6 comes out tomorrow. I spent today building my own GTA 1.</h1>
+        <p class="standfirst">I am not a developer. I have never written a game. By the end of the afternoon I was being chased through my own city by a police helicopter.</p>
+        <p class="when">18 November 2026, by Ramon Wieleman</p>
+      </header>
+
+      <div class="body">
+        <p>Tomorrow, 19 November, GTA 6 finally comes out. The whole world has been waiting for it for years, and it will look incredible.</p>
+        <p>But if I am honest, the GTA I have real feelings for is the first one, from 1997. You looked straight down on a city of chunky pixels. The cars slid through the corners. There was a radio. You could do whatever you wanted, and what you wanted was usually to cause chaos and then get away from the police. It is the one I remember best.</p>
+        <p>So this morning I thought: I do not want to wait for number six. I want number one back. And since AI is a daily topic in my work, I decided to see whether I could build that feeling myself. Today. Without being able to program.</p>
+
+        <div class="callout">
+          <p>The result is called Ramon's Rampage, and it runs in your browser. <a class="play" href="../../game/">Play it</a></p>
+          <p>Arrows or WASD to drive and walk, <kbd>E</kbd> to get in and out of a car, <kbd>Space</kbd> for the handbrake, <kbd>P</kbd> for the map.</p>
+        </div>
+
+        <figure>
+          <img src="../../assets/shots/chase.jpg" alt="A top-down view of a pixel city. A car is chased by police; blue arrows at the edge of the screen point at police cars that are out of view." width="960" height="540">
+          <figcaption>Alert level 3 in Downtown. The arrows point at police cars I cannot see yet. The radio is on Santpoort FM.</figcaption>
+        </figure>
+
+        <p>I am a Group Director at OpenValue. I know a fair bit about IT and AI, but I do not write software; we have people for that who are far better at it than I will ever be. I built this with Claude Code, an AI that writes the code, runs it and tests it while you talk to it. Here is what I did, in the order I did it.</p>
+
+        <h2 data-step="1">I asked what I needed</h2>
+        <p>My first message was not "build me a game". It was a question: I want to rebuild the game I loved, which tools do I need and which AI model is best for it?</p>
+        <p>The answer was a short list of add-ons that make the AI work more carefully: one that makes it ask questions before it builds, one that makes it write a plan, one that makes it test everything it makes. I said: add them. That took a minute and it shaped the rest of the day.</p>
+
+        <h2 data-step="2">I said what I loved, not how to build it</h2>
+        <p>Then it asked me what I actually wanted. Not in technical terms. What did I love about that old game?</p>
+        <p>I wrote: the pixel look. The way the cars handled. Walking around with your character. Driving around freely, chaos, and getting away from the police. Missions I could do without.</p>
+        <p>That was the whole brief. It turned out to be enough. I think this is the most useful thing I learned today: you do not have to know how something is built. You have to know what it should feel like, and say it plainly.</p>
+
+        <h2 data-step="3">The AI said no, and it was right</h2>
+        <p>I asked it to call the game "Grand Theft Auto: Ramon's Rampage" and to look up screenshots of the original to copy.</p>
+        <p>It refused. Politely, but it refused. It would not copy someone else's game: not the name, not the city, not the art. What it would do is build a game of my own in the same kind of world, with the same kind of camera. So it became "Ramon's Rampage", with its own city, its own cars and its own police.</p>
+        <p>I pushed a few more times during the day. I asked for a cover like the one of GTA 6. Same answer, and each time it came back with something of our own instead. I was a little annoyed, and then I realised it is exactly what I would want from a colleague.</p>
+
+        <h2 data-step="4">We picked the technology together</h2>
+        <p>It gave me three options to build with and explained them in normal language. I liked the idea of a real game engine, but that would have made it hard for the AI to test its own work. We settled on a mix: a library called Phaser that runs in any browser, organised the tidy way a game engine would do it.</p>
+        <p>I did have one demand, because I am still an IT person: I wanted the newest version. I asked what the differences were and whether switching at that point was wise, and we went with the newest.</p>
+
+        <h2 data-step="5">I asked for sketches, and rejected them</h2>
+        <p>Before any real code, it showed me sketches of how the city could look. My reply was: none of these look right. The old game was not completely flat. The buildings had depth; they leaned away from you as you drove past.</p>
+        <p>So it made a small page with a slider for how much the buildings lean. I moved the slider until it felt like 1997 and said: that one. Setting 80, for the record.</p>
+
+        <figure>
+          <img src="../../assets/shots/driving.jpg" alt="A car drives down an avenue between buildings whose walls lean outward, as seen from above." width="960" height="540">
+          <figcaption>The buildings lean away from the middle of the screen. That one detail is most of the feeling.</figcaption>
+        </figure>
+
+        <h2 data-step="6">Step one was only driving</h2>
+        <p>The plan had seven steps. The first one was nothing but a car and a city. No police, no people, no points. Just: does driving feel good?</p>
+        <p>It did. The steering was right the first time. The rest I had opinions about, and I gave them the way you would to a contractor:</p>
+        <ul>
+          <li>The car looks blocky at speed.</li>
+          <li>The alleys are too narrow to drive into.</li>
+          <li>The city is too square and too boring. Give me different block sizes.</li>
+          <li>The parks with trees are great. Half as many trees, though.</li>
+        </ul>
+        <p>A little later all of that was fixed. Playing something small early, and saying what bothers you, works much better than describing everything up front.</p>
+
+        <h2 data-step="7">Then I started asking for fun things</h2>
+        <p>Once the car worked I got greedy. A tank that can shoot, but rare: one in a hundred vehicles. Trucks with a trailer that actually hinges. Tanks and trucks that drive over other cars, which then burn and blow up.</p>
+        <p>And things that are just for me. The quiet part of town is called Santpoort-Noord, where I live. The biggest park is named after my daughter. There is a flower shop with my wife's name on the roof, an OpenValue tower, Code Nomads vans, and a banner for the Harddraverij, the harness race in my village that I help organise. None of it gets in the way of the game. You just find it if you look around.</p>
+
+        <figure>
+          <img src="../../assets/shots/tank.jpg" alt="A green tank drives through a street in the pixel city and fires its cannon." width="960" height="540">
+          <figcaption>One vehicle in a hundred is a tank. It took me a while to find it.</figcaption>
+        </figure>
+
+        <h2 data-step="8">I left, and told it to keep going</h2>
+        <p>At some point I had to leave for a few hours. I typed: keep building on your own judgement until the game is completely finished and tested, and make sure I can adjust things step by step afterwards.</p>
+        <p>When I came back there was traffic that brakes when you step into the road, pedestrians who run when they hear shots, police with five alert levels, weapons, sound, a title screen, and a build log in which every decision it had made on my behalf was written down, with where to change it if I disagreed.</p>
+        <p>What impressed me most was not the building. It was the checking. It had asked a second AI, one that had not seen any of the work, to review everything. That reviewer found real mistakes. My favourite: you got points when the police ran over a pedestrian while chasing you. You could stand still, let the police cause the accidents, and watch your score go up. That got fixed before I ever saw it.</p>
+
+        <h2 data-step="9">I played it and kept a wish list</h2>
+        <p>Then came the best part of the day. I played, and every time I thought "it would be nice if", I typed it. Often three wishes in a row while it was still working on the first.</p>
+        <ul>
+          <li>Music, with a different radio station in every car.</li>
+          <li>Show me when police are coming up behind me.</li>
+          <li>The tank is indestructible. Fix that.</li>
+          <li>The sea is a wall. If I drive into it I want to sink.</li>
+          <li>Skid marks when I use the handbrake. Tracks in the grass.</li>
+          <li>If I have no weapon, let me throw a punch.</li>
+          <li>At the highest alert level: police tanks and a helicopter.</li>
+          <li>A map in the corner, with the names of the districts.</li>
+          <li>A different start every time, with the weapons somewhere else.</li>
+        </ul>
+        <p>Every one of those is in the game now. The music is composed by the AI too: eight stations, written as patterns of notes, played by the browser. There is no sound file anywhere.</p>
+
+        <figure>
+          <img src="../../assets/shots/map.jpg" alt="The pause screen of the game: a map of the whole city with the districts Santpoort-Noord, Downtown and Harbour." width="960" height="540">
+          <figcaption>Press P and you get the whole city. Santpoort-Noord on the left, obviously.</figcaption>
+        </figure>
+
+        <h2 data-step="10">My family joined the cast</h2>
+        <p>The last thing I wanted was a proper opening, the way games used to have: credits, a cast, a title that lands with a bang. I gave it three photos, of me, my wife Anne and our daughter Emma.</p>
+        <p>It cut each of us out of our photo, on my own laptop, without sending the photos anywhere, and redrew us as characters with flat colours and ink lines. On the title screen we even breathe a little.</p>
+
+        <figure>
+          <img src="../../assets/shots/title.jpg" alt="The title screen of Ramon's Rampage: three illustrated portraits labelled Ramon, Anne and Emma against a city at sunset." width="960" height="540">
+          <figcaption>The cast of Ramon's Rampage.</figcaption>
+        </figure>
+
+        <h2>What it added up to</h2>
+        <table>
+          <tr><th>Time</th><td>One day, with a break of a few hours in the middle.</td></tr>
+          <tr><th>Code written by me</th><td>None.</td></tr>
+          <tr><th>Code written by the AI</th><td>About 10,000 lines, in some 80 small saved steps.</td></tr>
+          <tr><th>Automatic tests</th><td>300. They run in a few seconds and they all pass.</td></tr>
+          <tr><th>Times the AI told me no</th><td>A handful. All about not copying a game that already exists.</td></tr>
+        </table>
+
+        <h2>What I take from it</h2>
+        <p>At work, what AI means for software teams comes up all the time. Today made a few things very concrete for me.</p>
+        <p><strong>Describe the feeling.</strong> "The buildings should lean" got me further than any technical instruction I could have invented.</p>
+        <p><strong>Small steps you can try.</strong> Seven steps, each one playable. I never had to judge something I could not see.</p>
+        <p><strong>Make it check itself.</strong> The tests and the second reviewer are the reason I could leave for a few hours and come back to something that worked. Without them I would have come back to a mess that looked finished.</p>
+        <p><strong>Write decisions down.</strong> The build log is why I, a non-developer, can still change things. Every number that matters, how fast a car goes, how many police cars come after you, sits in a plain settings file with a name I understand.</p>
+        <p><strong>It is not magic, and it is not a toy.</strong> I did not build this alone and neither did the AI. I knew what I wanted; it knew how to make it. That is a different way of working than I am used to, and I think a lot of our work is going to look like this.</p>
+        <p>And now, if you will excuse me: GTA 6 comes out tomorrow, and I have a helicopter to shake off first.</p>
+
+        <div class="callout">
+          <p><a class="play" href="../../game/">Play Ramon's Rampage</a></p>
+          <p>It needs a keyboard, so it works best on a laptop or desktop.</p>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <footer class="foot">Ramon Wieleman, Santpoort-Noord. This site and the game on it were built with Claude.</footer>
+</div>
+</body>
+</html>
