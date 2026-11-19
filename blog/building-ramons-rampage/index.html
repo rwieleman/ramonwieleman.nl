@@ -44,7 +44,7 @@
       <header>
         <h1>GTA 6 comes out tomorrow. I spent today building my own GTA 1.</h1>
         <p class="standfirst">I am not a developer. I have never written a game. By the end of the afternoon I was being chased through my own city by a police helicopter.</p>
-        <p class="when"><time datetime="2026-11-18">18 November 2026</time>, by Ramon Wieleman</p>
+        <p class="when"><time datetime="2026-11-18">18 November 2026</time>, by Ramon Wieleman. Updated on <time datetime="2026-11-19">19 November</time>: two updates at the end.</p>
       </header>
 
       <div class="body">
@@ -224,10 +224,10 @@
 
         <h2>What it added up to</h2>
         <table>
-          <tr><th>Time</th><td>One day, with a break of a few hours in the middle and an evening that got out of hand.</td></tr>
+          <tr><th>Time</th><td>One day, with a break of a few hours in the middle and an evening that got out of hand. Then the morning after, for what my colleagues found.</td></tr>
           <tr><th>Code written by me</th><td>None.</td></tr>
-          <tr><th>Code written by the AI</th><td>About 14,000 lines, in more than 90 saved steps.</td></tr>
-          <tr><th>Automatic tests</th><td>351. They run in a few seconds and they all pass.</td></tr>
+          <tr><th>Code written by the AI</th><td>About 15,000 lines, in almost a hundred saved steps.</td></tr>
+          <tr><th>Automatic tests</th><td>368. They run in a few seconds and they all pass.</td></tr>
           <tr><th>Times the AI told me no</th><td>A handful. All about not copying a game that already exists.</td></tr>
         </table>
 
@@ -238,7 +238,7 @@
         <p>Every decision it made for me is in a build log, and every number that matters, how fast a car goes, how many police cars come after you, sits in a settings file with a name I understand. Have it write down what it decided, in words you can read.</p>
 
         <h2>What I did not do</h2>
-        <p>I did not read any of the 14,000 lines. Not one of them. The 351 tests that say the game works were written by the same AI that wrote the code, which is a little like marking your own homework. For a game about a tank in Santpoort that is fine. If the tank drives through a wall, nobody loses any money.</p>
+        <p>I did not read any of the 15,000 lines. Not one of them. The 368 tests that say the game works were written by the same AI that wrote the code, which is a little like marking your own homework. For a game about a tank in Santpoort that is fine. If the tank drives through a wall, nobody loses any money.</p>
         <p>For software a client runs their business on, it is not fine. Somebody has to read what the AI wrote and say whether it is right, and that somebody is an engineer. The difference between my game and their system is the people who can do that. It is what I talk about with clients, and since today I have felt it myself.</p>
 
         <p>And now, if you will excuse me: GTA 6 comes out tomorrow, and I have a helicopter to shake off first.</p>
@@ -247,6 +247,25 @@
           <p><a class="play" href="../../game/">Play Ramon's Rampage</a></p>
           <p>On a laptop you play with the keyboard. On a phone, turn it on its side and you get a stick and buttons on the screen.</p>
         </div>
+
+        <h2>Update, 19 November: our CTO is number one</h2>
+        <p>This morning I shared the game with my colleagues. Shortly after nine the top of the list read BJS, 1,234,567.</p>
+        <p>BJS is Bert Jan Schrijver, the CTO of OpenValue. He had not driven a metre for it. He sent the score straight to the server, by hand, dressed up as the game. The same initials are further down the list with a 15 and a 20, which I take to be the ones he played.</p>
+
+        <figure>
+          <img src="../../assets/shots/number-one.jpg" alt="The end of a round on a phone. The list of world high scores is headed by BJS with 1,234,567 points, far above the rest." width="960" height="536">
+          <figcaption>The list this morning, on my phone. Number one was typed, not played.</figcaption>
+        </figure>
+
+        <p>I cannot say nobody warned me. The AI had written in its own notes that whoever wants to cheat at a game about a tank in Santpoort can, and the second AI had described how. It stayed a sentence in a file until an engineer looked at the thing the way engineers do and tried it.</p>
+        <p>That hole is closed now. A score sent to the server by hand is refused. How the server tells the difference I will keep to myself.</p>
+        <p>This is the argument of this whole post, delivered by a colleague before lunch. Two AIs built and reviewed that scoreboard and I put it online. It took one expert less than a morning to walk through it. You cannot rely on vibe coding alone. Somebody who knows how systems get broken has to try to break yours, preferably before your CTO does.</p>
+
+        <h2>Update, 19 November: it runs on a phone</h2>
+        <p>The other thing colleagues do is ask for features. Frank Meerema asked in our Slack channel for controls on a phone. Fair enough: the game needed a keyboard.</p>
+        <p>It now has a stick under your left thumb and buttons under your right, and it asks you to turn the phone on its side. The AI tested that on a pretend phone on my laptop and reported that it worked. Then I tried it on my actual iPhone. The stick turned the car far too fast, and there was no sound.</p>
+        <p>The stick now steers by degrees. The sound should work as well. It hung on a detail I would never have guessed: an iPhone only lets a page make sound after a deliberate act, and it counts lifting a finger from the screen, where the game was listening for putting one down.</p>
+        <p>Same lesson as the scoreboard, on a smaller scale. Tested on a pretend phone is not tested.</p>
 
         <p>If you want to react, I am on <a href="https://www.linkedin.com/in/ramonwieleman/">LinkedIn</a>.</p>
       </div>
